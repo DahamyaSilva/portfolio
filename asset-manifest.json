@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.2d6c204a.css",
+    "main.js": "/portfolio/static/js/main.ba4ab007.js",
+    "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
+    "static/media/TicketingSystem.jpg": "/portfolio/static/media/TicketingSystem.b8a58fa2aaa5e6fb2291.jpg",
+    "static/media/FindMyLawyer.jpg": "/portfolio/static/media/FindMyLawyer.12d8d5f5dc0d38068259.jpg",
+    "static/media/Dahamya.jpg": "/portfolio/static/media/Dahamya.afc6cec82001147440e9.jpg",
+    "static/media/ArtPage.jpg": "/portfolio/static/media/ArtPage.2fbee84065b62f39c94c.jpg",
+    "static/media/LifeBelowWater.jpg": "/portfolio/static/media/LifeBelowWater.4426d6dfbbfc13299a59.jpg",
+    "static/media/PlaneSeatManagement.jpg": "/portfolio/static/media/PlaneSeatManagement.328585b06131bdcf7b01.jpg",
+    "static/media/Dee_Logo.png": "/portfolio/static/media/Dee_Logo.bb60821e217f26643da9.png",
+    "static/media/PanaduraBalikaLogo.jpg": "/portfolio/static/media/PanaduraBalikaLogo.4436198ac810433d253f.jpg",
+    "static/media/UniversityOfWestminster.png": "/portfolio/static/media/UniversityOfWestminster.6d74ccc4a73f90656d96.png",
+    "index.html": "/portfolio/index.html",
+    "main.2d6c204a.css.map": "/portfolio/static/css/main.2d6c204a.css.map",
+    "main.ba4ab007.js.map": "/portfolio/static/js/main.ba4ab007.js.map",
+    "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2d6c204a.css",
+    "static/js/main.ba4ab007.js"
+  ]
+}
