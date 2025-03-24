@@ -101,7 +101,7 @@ function Portfolio() {
               </div>
               <div className="education-details">
                 <h3 className="education-title">University of Westminster</h3>
-                <p className="education-school">BEng. Software Engineering</p>
+                <p className="education-school">B.Eng Software Engineering</p>
                 <p className="education-period">2023 - 2027</p>
               </div>
             </div>
@@ -238,7 +238,6 @@ function Portfolio() {
                 <h3 className="certification-title">Learning the JavaScript Language</h3>
                 <p className="certification-issuer">LinkedIn Learning</p>
                 <p className="certification-date">December 2024</p>
-                <p className="certification-description">Comprehensive course covering JavaScript fundamentals, syntax, and practical applications in web development.</p>
                 <a href="https://www.linkedin.com/learning/certificates/18b367b27698e1550a784e14df3b9be39eb03406c74f837955b2330f39154729?trk=share_certificate" 
                    target="_blank" 
                    rel="noopener noreferrer" 
@@ -251,9 +250,8 @@ function Portfolio() {
               <div className="certification-details">
                 <h3 className="certification-title">Java Object-Oriented Programming</h3>
                 <p className="certification-issuer">LinkedIn Learning</p>
-                <p className="certification-date">December 2024</p>
-                <p className="certification-description">In-depth course on object-oriented programming principles in Java, covering classes, instances, and constructors.</p>
-                <a href="https://www.linkedin.com/learning/certificates/9bb9804196ef2632753062dfd60d1ce98c17a42244eb2160f175d44ed893a9ef?trk=share_certificate" 
+                <p className="certification-date">December 2024</p>                
+               <a href="https://www.linkedin.com/learning/certificates/9bb9804196ef2632753062dfd60d1ce98c17a42244eb2160f175d44ed893a9ef?trk=share_certificate" 
                    target="_blank" 
                    rel="noopener noreferrer" 
                    className="certification-link">
@@ -266,7 +264,6 @@ function Portfolio() {
                 <h3 className="certification-title">Java Threads</h3>
                 <p className="certification-issuer">LinkedIn Learning</p>
                 <p className="certification-date">January 2025</p>
-                <p className="certification-description">Advanced Java course focusing on threads and concurrency, covering multithreaded development concepts and practical implementations.</p>
                 <a href="https://www.linkedin.com/learning/certificates/4d43f6fc0c1393bc0c4b1aa4e3884e289c3fc7527a0db39ba8755718fcef6ed3?trk=share_certificate" 
                    target="_blank" 
                    rel="noopener noreferrer" 
@@ -280,7 +277,6 @@ function Portfolio() {
                 <h3 className="certification-title">React Essential Training</h3>
                 <p className="certification-issuer">LinkedIn Learning</p>
                 <p className="certification-date">March 2025</p>
-                <p className="certification-description">Comprehensive training covering React fundamentals, components, hooks, and modern React development practices. Topics include creating elements, writing components, using React hooks, and understanding libraries like Next and Vite.</p>
                 <a href="https://www.linkedin.com/learning/certificates/df78e96be07c5ed2a17ab4669adc462112a3574a66b4a2aff3f5b771ad5ddf91?trk=share_certificate" 
                    target="_blank" 
                    rel="noopener noreferrer" 
@@ -298,14 +294,14 @@ function Portfolio() {
               <FaEnvelope className="contact-icon" />
               <div className="contact-details">
                 <h3>Email</h3>
-                <a href="mailto:dahamyasilva@gmail.com">dahamyasilva@gmail.com</a>
+                <a href="mailto:dahamyapsilva@gmail.com">dahamyapsilva@gmail.com</a>
               </div>
             </div>
             <div className="contact-item">
               <FaPhone className="contact-icon" />
               <div className="contact-details">
                 <h3>Phone</h3>
-                <a href="tel:+94712345678">+94 71 234 5678</a>
+                <a href="tel:+94 778738048">+94 778738048</a>
               </div>
             </div>
           </div>
