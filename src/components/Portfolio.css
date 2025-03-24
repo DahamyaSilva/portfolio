@@ -1099,3 +1099,108 @@ img {
     font-size: 0.8rem;
   }
 }
+
+/* Critical fix for project display on mobile while preserving animations */
+@media (max-width: 480px) {
+  /* Make sure projects display properly while maintaining animations */
+  .project-item {
+    display: block !important;
+    height: auto !important;
+    position: relative !important;
+    overflow: visible !important;
+  }
+  
+  .project-content {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 1.2rem !important;
+  }
+  
+  /* Fix for project descriptions */
+  .project-description {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: unset !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    overflow: visible !important;
+    word-break: break-word !important;
+    hyphens: auto !important;
+    white-space: normal !important;
+    color: #ffffff !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    margin: 0 0 1.2rem 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    z-index: 10 !important;
+    /* Maintain animation but ensure it starts visible and stays visible */
+    animation: slideUp 0.8s ease-out forwards !important;
+    animation-delay: 0.9s !important;
+    animation-fill-mode: both !important;
+  }
+  
+  /* Modify the slideUp animation for mobile to ensure visibility */
+  @keyframes slideUp {
+    0% {
+      opacity: 0.5;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Ensure tech stack displays properly */
+  .project-tech-stack {
+    position: static !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    width: 100% !important;
+    margin-top: 1rem !important;
+    padding: 1rem 0.5rem !important;
+    background-color: rgba(112, 112, 255, 0.05) !important;
+    z-index: 5 !important;
+  }
+  
+  /* Fix for any z-index or stacking issues */
+  .project-image-container {
+    z-index: 1 !important;
+  }
+  
+  /* Ensure text visibility immediately, even during animation */
+  .name,
+  .title,
+  .section-title,
+  .about-text,
+  .education-title,
+  .education-school,
+  .education-period,
+  .project-title,
+  .project-description,
+  .tech-name,
+  .contact-details h3,
+  .contact-details a {
+    will-change: opacity, transform;
+    backface-visibility: hidden;
+    min-opacity: 0.5 !important; /* Ensures some visibility even during animation */
+  }
+}
+
+/* Add browser-specific prefixes for better animation support */
+@supports (-webkit-appearance:none) {
+  @media (max-width: 480px) {
+    .project-description {
+      -webkit-animation: slideUp 0.8s ease-out forwards !important;
+      -webkit-animation-delay: 0.9s !important;
+      -webkit-animation-fill-mode: both !important;
+    }
+  }
+}
