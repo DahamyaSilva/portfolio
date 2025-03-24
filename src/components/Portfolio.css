@@ -496,6 +496,7 @@
   text-align: left;
 }
 
+/* FIX: Modified to ensure consistent project description display */
 .project-description {
   color: #ffffff;
   font-size: 1rem;
@@ -504,9 +505,13 @@
   flex: 1;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
+  word-break: break-word; /* Added to help with long words */
+  hyphens: auto; /* Added to help with long words */
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  width: 100%; /* Added to ensure full width */
+  max-width: 100%; /* Added to prevent overflow */
 }
 
 .project-tech-stack {
@@ -939,7 +944,7 @@ img {
     font-size: 0.9rem;
   }
   
-  /* Improved project styles for mobile */
+  /* FIX: Improved project styles for mobile */
   .projects-container {
     grid-template-columns: 1fr;
     padding: 0 0.5rem;
@@ -958,6 +963,7 @@ img {
     display: block;
   }
 
+  /* FIX: Modified project description for mobile to ensure visibility */
   .project-description {
     font-size: 1rem;
     line-height: 1.5;
@@ -968,17 +974,30 @@ img {
     visibility: visible !important;
     opacity: 1 !important;
     color: #ffffff !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    height: auto !important;
+    min-height: auto !important;
+  }
+
+  /* FIX: Ensure project content is properly displayed */
+  .project-content {
+    padding: 1.2rem;
+    width: 100%;
+    display: block !important;
+    overflow: visible !important;
+    position: static !important;
   }
 
   .project-image-container {
     aspect-ratio: 4/3;
     max-height: 180px;
-  }
-  
-  .project-content {
-    padding: 1.2rem;
-    width: 100%;
-    display: block;
   }
   
   .project-tech-stack {
