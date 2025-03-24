@@ -24,7 +24,7 @@
 }
 
 .logo-image {
-  height: 120px;
+  height: 100px;
   width: auto;
   transition: opacity 0.3s ease;
 }
@@ -89,31 +89,27 @@
 }
 
 .hero-section {
-  height: 120vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 20px;
-  background-color: #000000;
-  position: relative;
-  z-index: 1;
+  background-color: #000;
+  padding: 2rem;
 }
 
 .name {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  animation: fadeInUp 1s ease;
+  font-size: 3.5rem;
   color: #7070FF;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .title {
-  font-size: 1.8rem;
-  color: #ffffff;
-  animation: fadeInUp 1s ease 0.3s;
-  opacity: 0;
-  animation-fill-mode: forwards;
+  font-size: 2rem;
+  color: #fff;
+  opacity: 0.9;
 }
 
 /* Add a subtle fade-in animation for sections */
@@ -135,21 +131,22 @@
 .projects-section,
 .certifications-section,
 .contact-section {
+  padding: 6rem 2rem;
   max-width: 1200px;
-  width: 90%;
-  margin: 4rem auto;
-  padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(5px);
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .section-title {
+  font-size: 2.5rem;
   color: #7070FF;
-  font-size: 2rem;
-  margin-bottom: 2rem;
   text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 600;
 }
 
 .about-content {
@@ -157,9 +154,8 @@
   gap: 4rem;
   align-items: center;
   justify-content: center;
+  width: 100%;
   max-width: 1000px;
-  margin: 0 auto;
-  padding: 0 1rem;
 }
 
 .profile-image-container {
@@ -201,7 +197,7 @@
 .social-links {
   display: flex;
   gap: 1.5rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .social-link {
@@ -210,20 +206,31 @@
   gap: 0.5rem;
   color: #7070FF;
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1rem;
   transition: all 0.3s ease;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: rgba(112, 112, 255, 0.1);
 }
 
 .social-link:hover {
-  background-color: rgba(112, 112, 255, 0.2);
+  color: white;
+  background-color: #7070FF;
   transform: translateY(-2px);
 }
 
 .social-icon {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.cv-link {
+  background-color: rgba(112, 112, 255, 0.15);
+  border: 1px solid rgba(112, 112, 255, 0.3);
+}
+
+.cv-link:hover {
+  background-color: #7070FF;
+  border-color: #7070FF;
 }
 
 /* Skills Section Styles */
@@ -512,45 +519,65 @@
 }
 
 /* Contact Section Styles */
+.contact-section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .contact-info {
   display: flex;
   flex-direction: row;
   gap: 2rem;
   justify-content: center;
   margin-bottom: 3rem;
+  width: 100%;
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  padding: 1.2rem 2rem;
+  gap: 1rem;
+  padding: 1.5rem;
   background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
   flex: 1;
-  max-width: 350px;
+  max-width: 300px;
   min-width: 300px;
 }
 
 .contact-item:hover {
   transform: translateY(-5px);
+  background-color: rgba(112, 112, 255, 0.1);
+  border-color: rgba(112, 112, 255, 0.3);
 }
 
 .contact-icon {
   font-size: 1.8rem;
   color: #7070FF;
+  min-width: 2rem;
+}
+
+.contact-details {
+  flex: 1;
+  overflow: hidden;
 }
 
 .contact-details h3 {
   color: #7070FF;
-  font-size: 1.1rem;
-  margin: 0 0 0.3rem 0;
+  font-size: 1.2rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 500;
+  white-space: nowrap;
 }
 
 .contact-details a {
@@ -558,48 +585,60 @@
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s ease;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .contact-form {
+  width: 100%;
   max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  text-align: left;
+  gap: 0.8rem;
 }
 
 .form-group label {
   color: #7070FF;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: 500;
-  text-align: left;
-  margin-left: 0.2rem;
 }
 
 .form-group input,
 .form-group textarea {
-  padding: 0.8rem;
+  padding: 1rem;
   background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
+  border-radius: 8px;
   color: #ffffff;
   font-size: 1rem;
-  transition: border-color 0.3s ease;
-  text-align: left;
+  transition: all 0.3s ease;
+  width: 100%;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: #7070FF;
+  background-color: rgba(112, 112, 255, 0.1);
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
 }
 
 .submit-btn {
@@ -607,308 +646,88 @@
   background-color: #7070FF;
   color: #ffffff;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
+  width: fit-content;
   align-self: flex-start;
 }
 
 .submit-btn:hover {
-  background-color: #5a5ac7;
+  background-color: #5858ff;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(112, 112, 255, 0.3);
 }
 
 @media (max-width: 768px) {
-  .nav-content {
-    padding: 0 1rem;
-  }
-  
-  .nav-list {
-    display: none; /* Hide the navigation list on mobile */
-  }
-
-  .logo-image {
-    height: 80px; /* Smaller logo on mobile */
-  }
-  
-  .name {
-    font-size: 2.5rem; /* Smaller name on mobile */
-  }
-  
-  .title {
-    font-size: 1.4rem; /* Smaller title on mobile */
-  }
-
-  .about-section,
-  .skills-section,
-  .education-section,
-  .projects-section,
-  .certifications-section,
-  .contact-section {
-    width: 95%;
-    margin: 2rem auto;
-    padding: 1.5rem;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-  }
-
-  .about-content {
-    flex-direction: column;
-    gap: 2rem;
-    padding: 0;
-  }
-
-  .profile-image-container {
-    width: 200px; /* Smaller profile image on mobile */
-    height: 200px;
-    margin: 0 auto;
-  }
-
-  .about-text-container {
-    padding: 0;
-    max-width: 100%;
-  }
-
-  .about-text {
-    font-size: 1rem;
-    line-height: 1.6;
-    text-align: left;
-    margin: 0 0 1.5rem 0;
-  }
-
-  .social-links {
-    flex-direction: column; /* Stack social links on mobile */
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .social-link {
-    width: 100%; /* Full width social links */
-    justify-content: center;
-  }
-
-  .skills-container {
-    gap: 1rem;
-  }
-
-  .skill-item {
-    width: calc(33.33% - 1rem); /* 3 skills per row on mobile */
-    padding: 0.8rem;
-    min-width: 90px;
-  }
-
-  .skill-icon {
-    font-size: 2rem;
-  }
-
-  .skill-name {
-    font-size: 0.8rem;
-  }
-
-  .education-item {
-    flex-direction: column;
-    text-align: center;
-    padding: 1.5rem;
-    gap: 1.5rem;
-  }
-
-  .education-logo-container {
-    width: 100px;
-    height: 100px;
-  }
-
-  .education-title {
-    font-size: 1.2rem;
-  }
-
-  .education-school {
-    font-size: 1rem;
-  }
-
-  .education-period {
-    font-size: 0.9rem;
-  }
-
-  .projects-container {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    width: 100%;
-  }
-
-  .project-item {
-    margin: 0;
-  }
-
-  .project-content {
-    padding: 1rem;
-  }
-
-  .project-title {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-
-  .project-description {
-    font-size: 0.9rem;
-    text-align: left;
-  }
-
-  .project-tech-stack {
-    padding: 0.8rem 0;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .tech-item {
-    padding: 0.4rem 0.8rem;
-    margin: 0.2rem;
-  }
-
-  .tech-name {
-    font-size: 0.8rem;
-  }
-
-  .project-link {
-    width: 100%; /* Full width project links */
-    margin-top: 1rem;
-  }
-
   .contact-info {
     flex-direction: column;
     gap: 1rem;
     margin-bottom: 2rem;
+    align-items: center;
+  }
+
+  .contact-item {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding: 1.2rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .form-group label {
+    font-size: 1rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.8rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 4rem 1rem;
   }
 
   .contact-item {
     padding: 1rem;
-    width: 100%;
   }
 
   .contact-icon {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .contact-details h3 {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   .contact-details a {
     font-size: 0.9rem;
   }
 
-  .form-group input,
-  .form-group textarea {
-    padding: 0.7rem;
-    font-size: 0.9rem;
-  }
-
-  .submit-btn {
-    width: 100%;
-    padding: 0.8rem;
-    font-size: 1rem;
-  }
-
-  .education-container,
-  .certifications-container {
-    width: 100%;
-    padding: 0;
-  }
-
-  .education-item,
-  .certification-item {
-    margin: 0;
-    padding: 1rem;
-  }
-
   .contact-form {
-    width: 100%;
-    padding: 0;
+    padding: 1.2rem;
+    gap: 1.2rem;
   }
 
   .form-group {
-    margin-bottom: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .name {
-    font-size: 2rem;
-  }
-  
-  .title {
-    font-size: 1.2rem;
+    gap: 0.6rem;
   }
 
-  .profile-image-container {
-    width: 180px;
-    height: 180px;
-  }
-
-  .skill-item {
-    width: calc(50% - 1rem); /* 2 skills per row on very small devices */
-  }
-
-  .section-title {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .project-image-container {
-    aspect-ratio: 4/3; /* Adjust aspect ratio for better mobile viewing */
-  }
-
-  .about-section,
-  .skills-section,
-  .education-section,
-  .projects-section,
-  .certifications-section,
-  .contact-section {
-    width: 98%;
-    margin: 1.5rem auto;
-    padding: 1rem;
-  }
-
-  .about-text {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  .education-logo-container {
-    width: 80px;
-    height: 80px;
-  }
-
-  .project-content {
-    padding: 0.8rem;
-  }
-
-  .project-description {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  .certification-title {
-    font-size: 1.2rem;
-  }
-
-  .certification-description {
-    font-size: 0.9rem;
-    line-height: 1.5;
-  }
-
-  .contact-item {
-    padding: 0.8rem;
-  }
-
-  .form-group input,
   .form-group textarea {
-    padding: 0.8rem;
-    font-size: 0.9rem;
+    min-height: 120px;
   }
 }
 

@@ -10,7 +10,7 @@ import planeSeatManagementImage from '../images/PlaneSeatManagement.jpg';
 import ticketingSystemImage from '../images/TicketingSystem.jpg';
 import artPageImage from '../images/ArtPage.jpg';
 // Import icons from react-icons
-import { FaJava, FaReact, FaHtml5, FaCss3Alt, FaPython, FaEnvelope, FaPhone, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaJava, FaReact, FaHtml5, FaCss3Alt, FaPython, FaEnvelope, FaPhone, FaGithub, FaLinkedin, FaFileAlt } from 'react-icons/fa';
 import { SiJavascript, SiMysql } from 'react-icons/si';
 
 function Portfolio() {
@@ -50,6 +50,10 @@ function Portfolio() {
                 <a href="https://linkedin.com/in/dahamya-s-0b2118295" target="_blank" rel="noopener noreferrer" className="social-link">
                   <FaLinkedin className="social-icon" />
                   <span>LinkedIn</span>
+                </a>
+                <a href="/cv/DahamyaSilvaCV.pdf" download="DahamyaSilvaCV.pdf" className="social-link cv-link">
+                  <FaFileAlt className="social-icon" />
+                  <span>Download CV</span>
                 </a>
               </div>
             </div>
