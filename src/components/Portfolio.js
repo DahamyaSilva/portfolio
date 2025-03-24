@@ -27,7 +27,7 @@ function Portfolio() {
   return (
     <div className="portfolio-container">
       <Navigation />
-      <main className="portfolio-container">
+      <main>
         <section id="hero" className="hero-section">
           <h1 className="name">Dahamya Silva</h1>
           <h2 className="title">Software Engineering Undergraduate</h2>
