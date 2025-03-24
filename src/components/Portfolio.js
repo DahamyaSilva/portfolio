@@ -51,7 +51,7 @@ function Portfolio() {
                   <FaLinkedin className="social-icon" />
                   <span>LinkedIn</span>
                 </a>
-                <a href="/cv/DahamyaSilvaCV.pdf" download="DahamyaSilvaCV.pdf" className="social-link cv-link">
+                <a href={process.env.PUBLIC_URL + '/cv/DahamyaSilvaCV.pdf'} download="DahamyaSilvaCV.pdf" className="social-link cv-link">
                   <FaFileAlt className="social-icon" />
                   <span>Download CV</span>
                 </a>
