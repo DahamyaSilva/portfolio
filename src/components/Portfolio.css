@@ -504,6 +504,9 @@
   flex: 1;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .project-tech-stack {
@@ -952,6 +955,7 @@ img {
     font-size: 1.4rem;
     margin-bottom: 0.8rem;
     text-align: left;
+    display: block;
   }
 
   .project-description {
@@ -960,6 +964,10 @@ img {
     padding: 0;
     margin-bottom: 1.2rem;
     text-align: left;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #ffffff !important;
   }
 
   .project-image-container {
@@ -969,6 +977,8 @@ img {
   
   .project-content {
     padding: 1.2rem;
+    width: 100%;
+    display: block;
   }
   
   .project-tech-stack {
