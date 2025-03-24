@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.13e597b7.css",
-    "main.js": "/portfolio/static/js/main.ab080771.js",
+    "main.css": "/portfolio/static/css/main.4d725771.css",
+    "main.js": "/portfolio/static/js/main.b6eea3fd.js",
     "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
     "static/media/TicketingSystem.jpg": "/portfolio/static/media/TicketingSystem.b8a58fa2aaa5e6fb2291.jpg",
     "static/media/FindMyLawyer.jpg": "/portfolio/static/media/FindMyLawyer.12d8d5f5dc0d38068259.jpg",
@@ -13,12 +13,12 @@
     "static/media/PanaduraBalikaLogo.jpg": "/portfolio/static/media/PanaduraBalikaLogo.4436198ac810433d253f.jpg",
     "static/media/UniversityOfWestminster.png": "/portfolio/static/media/UniversityOfWestminster.6d74ccc4a73f90656d96.png",
     "index.html": "/portfolio/index.html",
-    "main.13e597b7.css.map": "/portfolio/static/css/main.13e597b7.css.map",
-    "main.ab080771.js.map": "/portfolio/static/js/main.ab080771.js.map",
+    "main.4d725771.css.map": "/portfolio/static/css/main.4d725771.css.map",
+    "main.b6eea3fd.js.map": "/portfolio/static/js/main.b6eea3fd.js.map",
     "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.13e597b7.css",
-    "static/js/main.ab080771.js"
+    "static/css/main.4d725771.css",
+    "static/js/main.b6eea3fd.js"
   ]
 }
