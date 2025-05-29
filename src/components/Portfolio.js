@@ -9,6 +9,7 @@ import lifeBelowWaterImage from '../images/LifeBelowWater.jpg';
 import planeSeatManagementImage from '../images/PlaneSeatManagement.jpg';
 import ticketingSystemImage from '../images/TicketingSystem.jpg';
 import artPageImage from '../images/ArtPage.jpg';
+import financeTrackerImage from '../images/FinanceTracker.jpg';
 // Import icons from react-icons
 import { FaJava, FaReact, FaHtml5, FaCss3Alt, FaPython, FaEnvelope, FaPhone, FaGithub, FaLinkedin, FaFileAlt } from 'react-icons/fa';
 import { SiJavascript, SiMysql } from 'react-icons/si';
@@ -32,16 +33,20 @@ function Portfolio() {
           <h1 className="name">Dahamya Silva</h1>
           <h2 className="title">Software Engineering Undergraduate</h2>
         </section>
+
         <section id="about" className="about-section">
           <h2 className="section-title">About Me</h2>
+
           <div className="about-content">
             <div className="profile-image-container">
               <img src={profileImage} alt="Dahamya Silva" className="profile-image" />
             </div>
+
             <div className="about-text-container">
               <p className="about-text">
                 Software Engineering undergraduate at the University of Westminster focused on academic excellence and technical skill development. Committed to building strong foundations in software development while transforming theoretical knowledge into practical solutions through collaborative projects and continuous learning, preparing for an impactful career in software engineering.
               </p>
+
               <div className="social-links">
                 <a href="https://github.com/DahamyaSilva" target="_blank" rel="noopener noreferrer" className="social-link">
                   <FaGithub className="social-icon" />
@@ -56,9 +61,13 @@ function Portfolio() {
                   <span>Download CV</span>
                 </a>
               </div>
+
             </div>
+
           </div>
+
         </section>
+
         <section id="skills" className="skills-section">
           <h2 className="section-title">Skills</h2>
           <div className="skills-container">
@@ -228,8 +237,34 @@ function Portfolio() {
                 </a>
               </div>
             </div>
+            <div className="project-item">
+              <div className="project-image-container">
+                <img src={financeTrackerImage} alt="Finance Tracker Project" className="project-image" />
+              </div>
+              <div className="project-content">
+                <h3 className="project-title">Finance Tracker</h3>
+                <p className="project-description">
+                A responsive personal finance web app featuring transaction management, real-time analytics, interactive charts, and local data persistence. 
+                </p>
+                <div className="project-tech-stack">
+                  <div className="tech-item">
+                    <span className="tech-name">JavaScript</span>
+                  </div>
+                  <div className="tech-item">
+                    <span className="tech-name">HTML</span>
+                  </div>
+                  <div className="tech-item">
+                    <span className="tech-name">CSS</span>
+                  </div>
+                </div>
+                <a href="https://github.com/DahamyaSilva/FinanceTracker.git" target="_blank" rel="noopener noreferrer" className="project-link">
+                  View on GitHub <FaGithub className="link-icon" />
+                </a>
+              </div>
+            </div>
           </div>
         </section>
+
         <section id="certifications" className="certifications-section">
           <h2 className="section-title">Certifications</h2>
           <div className="certifications-container">
