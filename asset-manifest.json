@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.baac3867.css",
-    "main.js": "/portfolio/static/js/main.c7c89478.js",
+    "main.css": "/portfolio/static/css/main.38d726d3.css",
+    "main.js": "/portfolio/static/js/main.1c8c800f.js",
     "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
     "static/media/TicketingSystem.jpg": "/portfolio/static/media/TicketingSystem.b8a58fa2aaa5e6fb2291.jpg",
     "static/media/FinanceTracker.jpg": "/portfolio/static/media/FinanceTracker.ce5d51e9a5c539fbafa6.jpg",
@@ -14,12 +14,12 @@
     "static/media/PanaduraBalikaLogo.jpg": "/portfolio/static/media/PanaduraBalikaLogo.4436198ac810433d253f.jpg",
     "static/media/UniversityOfWestminster.png": "/portfolio/static/media/UniversityOfWestminster.6d74ccc4a73f90656d96.png",
     "index.html": "/portfolio/index.html",
-    "main.baac3867.css.map": "/portfolio/static/css/main.baac3867.css.map",
-    "main.c7c89478.js.map": "/portfolio/static/js/main.c7c89478.js.map",
+    "main.38d726d3.css.map": "/portfolio/static/css/main.38d726d3.css.map",
+    "main.1c8c800f.js.map": "/portfolio/static/js/main.1c8c800f.js.map",
     "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.baac3867.css",
-    "static/js/main.c7c89478.js"
+    "static/css/main.38d726d3.css",
+    "static/js/main.1c8c800f.js"
   ]
 }
