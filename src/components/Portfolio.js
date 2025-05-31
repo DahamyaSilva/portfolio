@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Portfolio.css';
 import Navigation from './Navigation';
 import profileImage from '../images/Dahamya.jpg';
@@ -15,6 +15,114 @@ import financeTrackerImage from '../images/FinanceTracker.jpg';
 // Import icons from react-icons
 import { FaJava, FaReact, FaHtml5, FaCss3Alt, FaPython, FaEnvelope, FaPhone, FaGithub, FaLinkedin, FaFileAlt, FaNodeJs, FaPhp, FaCode } from 'react-icons/fa';
 import { SiJavascript, SiMysql, SiDotnet, SiPostman, SiIntellijidea } from 'react-icons/si';
+
+const ParticleBackground = () => {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext('2d');
+    let animationFrameId;
+
+    // Set canvas size
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Particle class
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 1 + 0.5 // Slightly smaller
+        this.speedX = Math.random() * 1 - 0.5; // Slightly faster
+        this.speedY = Math.random() * 1 - 0.5;
+        this.opacity = Math.random() * 0.8 + 0.3; // Higher opacity
+        this.twinkleSpeed = Math.random() * 0.03 + 0.01;
+        this.twinkleDirection = 1;
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        // Wrap around edges
+        if (this.x > canvas.width) this.x = 0;
+        if (this.x < 0) this.x = canvas.width;
+        if (this.y > canvas.height) this.y = 0;
+        if (this.y < 0) this.y = canvas.height;
+
+        // Twinkling effect
+        this.opacity += this.twinkleSpeed * this.twinkleDirection;
+        if (this.opacity >= 1 || this.opacity <= 0.3) {
+          this.twinkleDirection *= -1;
+        }
+      }
+
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        ctx.fill();
+        
+        // Add a subtle glow effect
+        ctx.shadowColor = 'white';
+        ctx.shadowBlur = 3;
+        ctx.fill();
+        ctx.shadowBlur = 0; // Reset shadow
+      }
+    }
+
+    // Create particles
+    const particles = [];
+    const particleCount = 200;
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+
+    // Animation loop
+    const animate = () => {
+      // Clear canvas completely
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    // Cleanup
+    return () => {
+      window.removeEventListener('resize', resizeCanvas);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100vw',
+        height: '100vh',
+        zIndex: -1, // Back to -1 so content shows on top
+        pointerEvents: 'none',
+        background: 'transparent'
+      }}
+    />
+  );
+};
 
 function Portfolio() {
   const certifications = [
@@ -54,6 +162,7 @@ function Portfolio() {
 
   return (
     <div className="portfolio-container">
+        <ParticleBackground /> 
       <Navigation />
       <main>
         <section id="hero" className="hero-section">
@@ -100,97 +209,119 @@ function Portfolio() {
 
           {/* Programming Languages */}
           <div className="skill-category">
+
             <h3 className="skill-category-title">Programming Languages</h3>
+
             <div className="skills-container">
-              <div className="skill-item">
+
+              <div className="skill-item" data-percentage="80">
                 <FaJava className="skill-icon" />
                 <span className="skill-name">Java</span>
               </div>
-              <div className="skill-item">
+
+              <div className="skill-item" data-percentage="75">
                 <SiJavascript className="skill-icon" />
                 <span className="skill-name">JavaScript</span>
               </div>
-              <div className="skill-item">
+
+              <div className="skill-item" data-percentage="75">
                 <FaPython className="skill-icon" />
                 <span className="skill-name">Python</span>
               </div>
-              <div className="skill-item">
+
+              <div className="skill-item" data-percentage="70">
                 <div className="skill-icon-text">C#</div>
                 <span className="skill-name">C#</span>
               </div>
-              <div className="skill-item">
+
+              <div className="skill-item" data-percentage="70">
                 <FaPhp className="skill-icon" />
                 <span className="skill-name">PHP</span>
               </div>
+
             </div>
           </div>
 
           {/* Web Development */}
           <div className="skill-category">
+            
             <h3 className="skill-category-title">Web Development</h3>
+
             <div className="skills-container">
-              <div className="skill-item">
+              
+              <div className="skill-item" data-percentage="75">
                 <FaReact className="skill-icon" />
                 <span className="skill-name">React</span>
               </div>
-              <div className="skill-item">
+
+              <div className="skill-item" data-percentage="85">
                 <FaHtml5 className="skill-icon" />
                 <span className="skill-name">HTML</span>
               </div>
-              <div className="skill-item">
+
+              <div className="skill-item" data-percentage="80">
                 <FaCss3Alt className="skill-icon" />
                 <span className="skill-name">CSS</span>
               </div>
-              <div className="skill-item">
+              
+              <div className="skill-item" data-percentage="65">
                 <FaNodeJs className="skill-icon" />
                 <span className="skill-name">Node.js</span>
               </div>
+
             </div>
           </div>
 
           {/* Databases */}
           <div className="skill-category">
+            
             <h3 className="skill-category-title">Databases</h3>
+
             <div className="skills-container">
-              <div className="skill-item">
+              <div className="skill-item" data-percentage="75">
                 <SiMysql className="skill-icon" />
                 <span className="skill-name">MySQL</span>
               </div>
-              <div className="skill-item">
+
+              <div className="skill-item" data-percentage="75">
                 <div className="skill-icon-text">SQL</div>
                 <span className="skill-name">SQL Server</span>
               </div>
+
             </div>
           </div>
 
           {/* Frameworks & Platforms */}
           <div className="skill-category">
+
             <h3 className="skill-category-title">Frameworks & Platforms</h3>
+
             <div className="skills-container">
-              <div className="skill-item">
+              <div className="skill-item" data-percentage="60">
                 <SiDotnet className="skill-icon" />
                 <span className="skill-name">.NET</span>
               </div>
             </div>
+
           </div>
 
           {/* Development Tools */}
           <div className="skill-category">
             <h3 className="skill-category-title">Development Tools</h3>
             <div className="skills-container">
-              <div className="skill-item">
+            <div className="skill-item" data-percentage="80">
                 <FaCode className="skill-icon" />
                 <span className="skill-name">VS Code</span>
               </div>
-              <div className="skill-item">
+              <div className="skill-item" data-percentage="80">
                 <SiIntellijidea className="skill-icon" />
                 <span className="skill-name">IntelliJ IDEA</span>
               </div>
-              <div className="skill-item">
+              <div className="skill-item" data-percentage="65">
                 <FaGithub className="skill-icon" />
                 <span className="skill-name">GitHub</span>
               </div>
-              <div className="skill-item">
+              <div className="skill-item" data-percentage="65">
                 <SiPostman className="skill-icon" />
                 <span className="skill-name">Postman</span>
               </div>
@@ -395,7 +526,7 @@ function Portfolio() {
           <div className="certification-item">
               <div className="certification-details">
                 <h3 className="certification-title">Java (Basic)</h3>
-                <p className="certification-issuer">hackerRank</p>
+                <p className="certification-issuer">HackerRank</p>
                 <p className="certification-date">May 2025</p>
                 <a href="https://www.hackerrank.com/certificates/7e3003d50842" 
                    target="_blank" 
@@ -409,7 +540,7 @@ function Portfolio() {
             <div className="certification-item">
               <div className="certification-details">
                 <h3 className="certification-title">Problem Solving (Basic)</h3>
-                <p className="certification-issuer">hackerRank</p>
+                <p className="certification-issuer">HackerRank</p>
                 <p className="certification-date">May 2025</p>
                 <a href="https://www.hackerrank.com/certificates/fa92aa58e7e0" 
                    target="_blank" 

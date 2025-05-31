@@ -61,33 +61,12 @@
   overflow-x: hidden;
   padding-top: 80px;
   min-height: 100vh;
-  background-color: #000000;
+  background: #000000; /* Simple black background for particles */
   color: #ffffff;
+  position: relative; /* Important for particle positioning */
+  z-index: 2;
 }
 
-.portfolio-container::before,
-.portfolio-container::after {
-  content: '';
-  position: fixed;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(112, 112, 255, 0.15) 0%, transparent 70%);
-  filter: blur(60px);
-  z-index: -1;
-  pointer-events: none;
-}
-
-.portfolio-container::before {
-  top: -200px;
-  left: -200px;
-}
-
-.portfolio-container::after {
-  bottom: -200px;
-  right: -200px;
-  background: radial-gradient(circle, rgba(112, 112, 255, 0.1) 0%, transparent 70%);
-}
 
 /* Typewriter Effect Styles */
 .typewriter-text {
@@ -129,7 +108,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #000;
   padding: 2rem;
 }
 
@@ -219,6 +197,7 @@
   flex: 1;
   max-width: 600px;
   padding: 0 1rem;
+  background-color: #000000;
 }
 
 .about-text {
@@ -295,25 +274,102 @@
 }
 
 /* Individual Skill Item */
+/* REPLACE THE PREVIOUS CSS WITH THIS UPDATED VERSION */
+/* Add these styles to your Portfolio.css file */
+
+/* Update skill item height to accommodate progress bar */
 .skill-item {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
-  justify-content: center; /* Center vertically */
-  gap: 0.8rem;
-  padding: 1.5rem;
-  background-color: rgba(0, 0, 0, 0.4); /* Darker background */
+  align-items: center;
+  justify-content: flex-start; /* Changed from center to flex-start */
+  gap: 0.6rem; /* Reduced gap slightly */
+  padding: 1.5rem 0.8rem 3rem 0.8rem; /* Increased bottom padding more */
+  background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(5px);
   border-radius: 12px;
   transition: all 0.3s ease;
   width: 120px;
-  min-height: 120px;
+  min-height: 180px; /* Increased height even more for longer names */
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
 }
 
+/* Progress bar background - appears under the skill name */
+.skill-item::before {
+  content: '';
+  position: absolute;
+  bottom: 50px; /* Moved further down to avoid overlap with longer names */
+  left: 15%;
+  width: 70%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+/* Progress bar fill based on data-percentage */
+.skill-item[data-percentage="85"]:hover::before { 
+  opacity: 1;
+  background: linear-gradient(90deg, #7070FF 85%, rgba(255, 255, 255, 0.2) 85%); 
+}
+.skill-item[data-percentage="80"]:hover::before { 
+  opacity: 1;
+  background: linear-gradient(90deg, #7070FF 80%, rgba(255, 255, 255, 0.2) 80%); 
+}
+.skill-item[data-percentage="75"]:hover::before { 
+  opacity: 1;
+  background: linear-gradient(90deg, #7070FF 75%, rgba(255, 255, 255, 0.2) 75%); 
+}
+.skill-item[data-percentage="70"]:hover::before { 
+  opacity: 1;
+  background: linear-gradient(90deg, #7070FF 70%, rgba(255, 255, 255, 0.2) 70%); 
+}
+.skill-item[data-percentage="65"]:hover::before { 
+  opacity: 1;
+  background: linear-gradient(90deg, #7070FF 65%, rgba(255, 255, 255, 0.2) 65%); 
+}
+
+.skill-item[data-percentage="60"]:hover::before { 
+  opacity: 1;
+  background: linear-gradient(90deg, #7070FF 60%, rgba(255, 255, 255, 0.2) 60%); 
+}
+
+.skill-item[data-percentage="90"]:hover::before { 
+  opacity: 1;
+  background: linear-gradient(90deg, #7070FF 90%, rgba(255, 255, 255, 0.2) 90%); 
+}
+.skill-item[data-percentage="95"]:hover::before { 
+  opacity: 1;
+  background: linear-gradient(90deg, #7070FF 95%, rgba(255, 255, 255, 0.2) 95%); 
+}
+
+/* Percentage text that appears under the progress bar */
+/* Enhanced percentage text with WHITE glow */
+.skill-item::after {
+  content: attr(data-percentage);
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: #ffffff; 
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+}
+
+
+.skill-item:hover::after {
+  opacity: 1;
+}
+
+/* Enhanced hover effect */
 .skill-item:hover {
   transform: translateY(-8px);
   background-color: rgba(112, 112, 255, 0.15);
@@ -321,6 +377,77 @@
   border-color: rgba(112, 112, 255, 0.4);
 }
 
+/* Ensure skill name positioning */
+.skill-name {
+  color: #ffffff;
+  font-size: 0.9rem; /* Slightly smaller font for longer names */
+  font-weight: 500;
+  text-align: center;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  line-height: 1.2; /* Better line height for text wrapping */
+  word-wrap: break-word; /* Allow text to wrap if needed */
+  hyphens: auto; /* Enable hyphenation for long words */
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet and smaller screens */
+@media (max-width: 768px) {
+  .skill-item {
+    min-height: 170px; /* Increased for tablet */
+  }
+  
+  .skill-item::before {
+    bottom: 47px; /* Adjusted spacing */
+    height: 3px;
+  }
+  
+  .skill-item::after {
+    bottom: 27px; /* Adjusted spacing */
+    font-size: 0.7rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .skill-item {
+    min-height: 140px; /* Increased for mobile */
+    padding: 1rem 0.8rem 2rem 0.8rem; /* Adjusted padding */
+  }
+  
+  .skill-item::before {
+    bottom: 38px; /* Adjusted spacing */
+    height: 3px;
+    left: 10%;
+    width: 80%;
+  }
+  
+  .skill-item::after {
+    bottom: 18px; /* Adjusted spacing */
+    font-size: 0.65rem;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+  .skill-item {
+    min-height: 110px;
+  }
+  
+  .skill-item::before {
+    bottom: 25px;
+    height: 2px;
+  }
+  
+  .skill-item::after {
+    bottom: 6px;
+    font-size: 0.6rem;
+  }
+}
 /* Skill Icons */
 .skill-icon {
   font-size: 3rem;
@@ -657,7 +784,6 @@
   margin: 0;
 }
 
-/* ===== CERTIFICATIONS SECTION - SIDE BY SIDE LAYOUT ===== */
 
 /* Certifications Section Styles */
 .certifications-section {
